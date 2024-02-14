@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling","hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wd14-tagger-api"
+version = "0.0.1"
+authors = [
+  { name="daswer123", email="daswerq123@gmail.com" },
+]
+description = "A simple FastAPI server to host WD14 Tagger"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+dependencies = [
+   'pandas==2.1.1',
+   'huggingface-hub==0.17.3',
+   'torch>=2.0.1',
+   'Pillow==10.0.1',
+   'deepdanbooru==1.0.2',
+   'onnxruntime==1.16.0',
+   'opencv-python==4.8.0.76',
+   "python-multipart",
+   'fastapi',
+   'requests',
+   'uvicorn'
+]
+
+[project.urls]
+Homepage = "https://github.com/daswer123/wd14-tagger-api-server"
+"Bug Tracker" = "https://github.com/daswer123/wd14-tagger-api-server/issues"
+
+[tool.hatch.build.targets.wheel]
+only-include=["wd14_tagger_api"]
